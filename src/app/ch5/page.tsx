@@ -22,7 +22,7 @@ const Home = () => {
           <p className="text-gray-600">내용</p>
         </Card>
       </div>
-      <div className="space-y-4 bg-blue-100 px-2 py-4">
+      <div className="space-y-3 bg-blue-100 px-2 py-4">
         <h1 className="text-2xl font-bold">
           [실습2] 재사용 가능한 Input 컴포넌트 만들기
         </h1>
@@ -44,11 +44,11 @@ const Home = () => {
         <Input label="주소" fullWidth variant="outlined" />
         <Input label="기타" type="text" size="lg" variant="filled" />
       </div>
-      <div className="bg-gray-200 px-2 py-4">
+      <div className="space-y-3 bg-gray-200 px-2 py-4">
         <h1 className="text-2xl font-bold">
           [실습3] 재사용 가능한 Badge 컴포넌트 만들기
         </h1>
-        <div className="space-y-4 space-x-3">
+        <div className="space-x-4">
           <Badge>기본</Badge>
           <Badge variant="success" size="md">
             완료
