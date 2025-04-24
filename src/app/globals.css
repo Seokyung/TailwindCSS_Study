@@ -1,1 +1,31 @@
 @import "tailwindcss";
+
+/* @theme 지시어를 활용하여 이미 존재하는 유틸리티 클래스 조작하기 */
+@theme {
+  /* 색깔에 mint-500을 추가 */
+  --color-mint-500: #008080;
+  /* 색깔에 mycolor-400을 추가 */
+  --color-mycolor-400: #dedede;
+}
+
+/* @utility 지시어를 활용한 나만의 유틸리티 클래스 만들기 */
+@utility my-class {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  font-size: 20px;
+}
+
+/* @variants 지시어를 활용한 다크모드, 호버 등 상태 변화 시 css 적용하기 */
+@utility my-element {
+  background-color: red;
+  color: white;
+  padding: 10px;
+  font-size: 20px;
+  @variant dark {
+    background-color: green;
+  }
+  @variant hover {
+    font-size: 50px;
+  }
+}
