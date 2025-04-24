@@ -29,3 +29,21 @@
     font-size: 50px;
   }
 }
+
+/* layer 지시어 사용하기 */
+@layer components {
+  h1 {
+    @apply text-2xl;
+  }
+  .title {
+    color: purple;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+}
+
+@layer base {
+  h1 {
+    @apply text-7xl;
+  }
+}
