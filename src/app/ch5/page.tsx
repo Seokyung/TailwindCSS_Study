@@ -4,8 +4,8 @@ import Input from "@/components/Input";
 
 const Home = () => {
   return (
-    <div className="">
-      <div className="space-y-4 bg-gray-200 px-2 py-4">
+    <div className="space-y-6">
+      <div className="space-y-3 bg-gray-200 px-2 py-4">
         <h1 className="text-2xl font-bold">
           [실습1] 재사용 가능한 Card 컴포넌트 만들기
         </h1>
@@ -22,16 +22,17 @@ const Home = () => {
           <p className="text-gray-600">내용</p>
         </Card>
       </div>
-      <div className="space-y-4 bg-green-100 px-2 py-4">
+      <div className="space-y-4 bg-blue-100 px-2 py-4">
         <h1 className="text-2xl font-bold">
           [실습2] 재사용 가능한 Input 컴포넌트 만들기
         </h1>
         <Input label="이름" placeholder="홍길동" />
+        <Input label="이메일" type="email" variant="filled" />
         <Input
-          label="이메일"
-          type="email"
-          error="올바른 이메일 형식이 아닙니다"
+          label="비밀번호"
+          type="password"
           variant="filled"
+          error="비밀번호는 8자 이상이어야 합니다."
         />
         <Input
           label="전화번호"
@@ -41,6 +42,7 @@ const Home = () => {
           placeholder="010-0000-0000"
         />
         <Input label="주소" fullWidth variant="outlined" />
+        <Input label="기타" type="text" size="lg" variant="filled" />
       </div>
       <div className="bg-gray-200 px-2 py-4">
         <h1 className="text-2xl font-bold">
