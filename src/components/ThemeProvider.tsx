@@ -67,7 +67,30 @@ const ThemeProvider = ({ children }: ThemeProviderProps) => {
   };
 
   // theme 변경 시 루트 태그(html)에 dark 클래스 추가
-  useEffect(() => {}, []);
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", isDark);
+  }, [isDark]);
+
+  // OS 시스템 변경 시 감지
+  useEffect(() => {
+    // 브라우저의 MediaQuery API를 사용하여 사용자의 시스템이 다크모드를 사용하고 있는지 확인하는 코드
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+    const handleChange = (e: MediaQueryListEvent) => {
+      if (!("theme" in localStorage)) {
+        // 다크 모드: e.matches 값이 true, 라이트 모드: false
+        setIsDark(e.matches);
+      }
+    };
+
+    // 미디어 쿼리 변경 시 이벤트 리스너 추가
+    mediaQuery.addEventListener("change", handleChange);
+
+    // 컴포넌트가 언마운트 될 때 이벤트 리스너 제거
+    return () => {
+      mediaQuery.removeEventListener("change", handleChange);
+    };
+  }, []);
 
   return (
     <ThemeContext.Provider value={{ toggleDarkMode }}>

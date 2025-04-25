@@ -1,5 +1,6 @@
 "use client";
 
+import ThemeToggle from "@/components/ThemeToggle";
 import Image from "next/image";
 import { useState } from "react";
 const blogPosts = [
@@ -56,12 +57,30 @@ const Home = () => {
   return (
     <div className={isDark ? "dark" : ""}>
       <main className="w-full px-4 py-8 dark:bg-gray-900">
-        <button
-          className="border-2 border-gray-800 bg-white px-2 py-1 dark:border-gray-300"
-          onClick={toggleDarkMode}
-        >
-          다크모드 버튼
-        </button>
+        <div className="space-y-8">
+          <div>
+            <h1 className="mb-3 text-3xl font-bold dark:text-gray-300">
+              [실습1] OS 시스템 기반 다크 모드
+            </h1>
+          </div>
+          <div>
+            <h1 className="mb-3 text-3xl font-bold dark:text-gray-300">
+              [실습2] 수동 다크 모드
+            </h1>
+            <button
+              className="border-2 border-gray-800 bg-white px-2 py-1 dark:border-gray-300"
+              onClick={toggleDarkMode}
+            >
+              다크모드 버튼
+            </button>
+          </div>
+          <div>
+            <h1 className="mb-3 text-3xl font-bold dark:text-gray-300">
+              [실습3] OS 시스템 + 수동 다크 모드
+            </h1>
+            <ThemeToggle />
+          </div>
+        </div>
         <h1 className="mb-8 text-center text-4xl font-bold dark:text-white">
           나의 블로그
         </h1>
