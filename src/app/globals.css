@@ -51,3 +51,14 @@
 body {
   margin: 16px;
 }
+
+.container {
+  color: #333;
+  background-color: #fff;
+}
+
+/* 수동으로 다크모드 처리하는 법 */
+/* @custom-variant dark (&:where(.dark, .dark *)); */
+
+/* 커스텀 셀렉터 만들기 */
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));

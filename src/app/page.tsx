@@ -8,19 +8,23 @@ type PageLink = {
 const day1List: PageLink[] = [
   {
     id: 1,
-    name: "1. Tailwind css 사용 이유와 사용법",
+    name: "Tailwind css 사용 이유와 사용법",
   },
   {
     id: 2,
-    name: "2. 기본 utility 클래스를 활용한 실습",
+    name: "기본 utility 클래스를 활용한 실습",
   },
   {
     id: 4,
-    name: "4. 지저분한 Tailwind css를 깔끔하게 작성하는 법",
+    name: "지저분한 Tailwind css를 깔끔하게 작성하는 법",
   },
   {
     id: 5,
-    name: "5. 재사용 가능한 컴포넌트 만들기 실습",
+    name: "재사용 가능한 컴포넌트 만들기 실습",
+  },
+  {
+    id: 7,
+    name: "Tailwind css의 다크모드",
   },
 ];
 
@@ -35,7 +39,7 @@ export default function Home() {
               href={`/ch${item.id}`}
               className="font-bold text-blue-700 underline"
             >
-              {item.name}
+              {`${item.id}. ${item.name}`}
             </Link>
           </li>
         ))}
