@@ -38,6 +38,10 @@ const day1List: PageLink[] = [
     id: 10,
     name: "Tailwind css 반응형 실습",
   },
+  {
+    id: 11,
+    name: "Tailwind CSS 커스텀 테마 설정하기",
+  },
 ];
 
 export default function Home() {
