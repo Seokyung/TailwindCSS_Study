@@ -26,11 +26,15 @@ const day1List: PageLink[] = [
     id: 7,
     name: "Tailwind css의 다크모드",
   },
+  {
+    id: 8,
+    name: "Tailwind css 다크모드 실습하기",
+  },
 ];
 
 export default function Home() {
   return (
-    <div className="m-4 flex flex-col gap-2">
+    <div className="flex w-full flex-col gap-2">
       <h1 className="mb-2 text-3xl font-bold">TailwindCSS Study</h1>
       <ul>
         {day1List.map((item: PageLink) => (
