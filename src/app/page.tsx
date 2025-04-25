@@ -30,6 +30,10 @@ const day1List: PageLink[] = [
     id: 8,
     name: "Tailwind css 다크모드 실습하기",
   },
+  {
+    id: 9,
+    name: "Tailwind css의 반응형",
+  },
 ];
 
 export default function Home() {
