@@ -4,14 +4,14 @@ const Portfolio = () => {
       {/* 헤더 섹션 */}
       <header className="container mx-auto px-4 py-6">
         {/* 좌우 정렬 */}
-        <nav className="">
+        <nav className="flex justify-between">
           <div className="text-xl font-bold text-indigo-600">내 포트폴리오</div>
           {/* 좌우 정렬 및 간격 */}
-          <ul className="">
+          <ul className="flex gap-6">
             <li>
               <a
                 href="#about"
-                className="text-gray-600 transition-colors hover:text-indigo-600"
+                className="font-semibold text-gray-600 transition-colors hover:text-indigo-600"
               >
                 소개
               </a>
@@ -19,7 +19,7 @@ const Portfolio = () => {
             <li>
               <a
                 href="#projects"
-                className="text-gray-600 transition-colors hover:text-indigo-600"
+                className="font-semibold text-gray-600 transition-colors hover:text-indigo-600"
               >
                 프로젝트
               </a>
@@ -27,7 +27,7 @@ const Portfolio = () => {
             <li>
               <a
                 href="#contact"
-                className="text-gray-600 transition-colors hover:text-indigo-600"
+                className="font-semibold text-gray-600 transition-colors hover:text-indigo-600"
               >
                 연락처
               </a>
@@ -38,7 +38,7 @@ const Portfolio = () => {
 
       {/* 히어로 섹션 */}
       {/* 중앙 정렬 및 텍스트 가운데 정렬 */}
-      <section className="container mx-auto px-4 py-16">
+      <section className="container mx-auto flex flex-col items-center px-4 py-16 text-center">
         <div className="mb-6 flex h-32 w-32 items-center justify-center overflow-hidden rounded-full bg-indigo-200">
           <span className="text-4xl">👋</span>
         </div>
@@ -46,8 +46,9 @@ const Portfolio = () => {
           안녕하세요, 저는 홍길동입니다
         </h1>
         <p className="mb-8 max-w-2xl text-xl text-gray-600">
-          프론트엔드 개발에 관심이 많은 주니어 개발자입니다. Next.js와 Tailwind
-          CSS를 배우고 있습니다.
+          프론트엔드 개발에 관심이 많은 주니어 개발자입니다.
+          <br />
+          Next.js와 Tailwind CSS를 배우고 있습니다.
         </p>
         <button className="transform rounded-lg bg-indigo-600 px-6 py-3 text-white shadow-lg transition-all hover:scale-105 hover:bg-indigo-700">
           연락하기
@@ -60,14 +61,14 @@ const Portfolio = () => {
           소개
         </h2>
         {/* 작은 브라우저 사이즈: 1열 & md 이상: 2열 */}
-        <div className="">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           <div className="rounded-xl bg-white p-8 shadow-lg">
             <h3 className="mb-4 text-xl font-semibold text-indigo-600">
               내 스킬
             </h3>
 
             {/* 너비가 작을 때, 벗어나지 않게 하기  */}
-            <div className="">
+            <div className="flex flex-wrap gap-2">
               <span className="rounded-full bg-indigo-100 px-3 py-1 text-indigo-800">
                 HTML
               </span>
@@ -120,7 +121,7 @@ const Portfolio = () => {
         </h2>
         {/* 기본: 1열 */}
         {/* md 이상: 3열 */}
-        <div className="">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {/* 프로젝트 카드 1 */}
           <div className="group overflow-hidden rounded-xl bg-gray-50 shadow-lg transition-all hover:shadow-xl">
             <div className="flex h-48 items-center justify-center bg-indigo-200">
@@ -134,7 +135,7 @@ const Portfolio = () => {
                 Next.js와 Tailwind CSS를 이용한 개인 포트폴리오 웹사이트입니다.
               </p>
               {/* 너비가 작을 때, 벗어나지 않게 하기  */}
-              <div className="">
+              <div className="flex flex-wrap gap-1.5">
                 <span className="rounded bg-gray-200 px-2 py-1 text-xs">
                   Next.js
                 </span>
@@ -158,7 +159,7 @@ const Portfolio = () => {
                 React를 이용한 간단한 할 일 관리 애플리케이션입니다.
               </p>
               {/* 너비가 작을 때, 벗어나지 않게 하기  */}
-              <div className="">
+              <div className="flex flex-wrap gap-1.5">
                 <span className="rounded bg-gray-200 px-2 py-1 text-xs">
                   React
                 </span>
@@ -182,7 +183,7 @@ const Portfolio = () => {
                 JavaScript와 날씨 API를 이용한 간단한 날씨 정보 웹사이트입니다.
               </p>
               {/* 너비가 작을 때, 벗어나지 않게 하기  */}
-              <div className="">
+              <div className="flex flex-wrap gap-1.5">
                 <span className="rounded bg-gray-200 px-2 py-1 text-xs">
                   HTML
                 </span>
@@ -251,8 +252,10 @@ const Portfolio = () => {
       {/* 푸터 */}
       <footer className="bg-gray-800 py-8 text-white">
         <div className="container mx-auto px-4 text-center">
-          <p className="mb-4">© 2025 내 포트폴리오. All rights reserved.</p>
-          <div className="flex justify-center space-x-4">
+          <p className="mb-4 text-sm">
+            © 2025 내 포트폴리오. All rights reserved.
+          </p>
+          <div className="flex flex-wrap justify-center gap-x-3 gap-y-2">
             <a href="#" className="transition-colors hover:text-indigo-400">
               Twitter
             </a>
