@@ -48,8 +48,9 @@ const day1List: PageLink[] = [
   },
   { id: 13, name: "Hover, focus 등 상태" },
   { id: 14, name: "Hover, focus 실습" },
-  { id: 15, name: "Tailwind 를 이용한 다양한 실습 1" },
-  { id: 16, name: "Tailwind 를 이용한 다양한 실습 2" },
+  { id: 15, name: "Tailwind를 이용한 다양한 실습 1" },
+  { id: 16, name: "Tailwind를 이용한 다양한 실습 2" },
+  { id: 17, name: "Tailwind를 UI 라이브러리와 함께 사용하기" },
 ];
 
 export default function Home() {
