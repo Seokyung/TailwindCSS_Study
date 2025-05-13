@@ -56,7 +56,9 @@ const day1List: PageLink[] = [
 export default function Home() {
   return (
     <div className="flex w-full flex-col gap-2">
-      <h1 className="mb-2 text-3xl font-bold">TailwindCSS Study</h1>
+      <h1 className="mb-2 text-3xl font-bold">
+        TailwindCSS Study & Github Actions를 활용한 CI/CD 실습
+      </h1>
       <ul>
         {day1List.map((item: PageLink) => (
           <li key={item.id}>
