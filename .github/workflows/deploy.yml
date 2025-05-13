@@ -40,6 +40,13 @@ jobs:
       - name: Github Repository 파일 불러오기
         uses: actions/checkout@v4
 
+      - name: PR에 코멘트 추가하기
+        if: github.ref != 'refs/heads/main'
+        run: |
+          gh pr comment ${{github.event.pull_request.number}} --body "안녕하세요! PR을 검토하겠습니다. 🙌"
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
       - name: Node 설치
         uses: actions/setup-node@v4
         with:
