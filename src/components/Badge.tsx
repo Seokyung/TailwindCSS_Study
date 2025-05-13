@@ -52,6 +52,7 @@ const Badge = ({
       rounded: !rounded,
       "rounded-full": rounded,
     },
+    className,
   );
 
   const dotClass = clsx(

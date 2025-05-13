@@ -43,6 +43,7 @@ const Input = ({
       "border-3 border-gray-400 bg-transparent":
         variant === "outlined" && !error && !disabled,
     },
+    fullWidth && "",
     error && "border-2 border-red-400 bg-white",
     disabled && "bg-gray-200 text-gray-400 cursor-not-allowed",
     className,

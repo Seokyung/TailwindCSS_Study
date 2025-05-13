@@ -38,7 +38,6 @@ const Card = ({
   padding = "md",
   radius = "md",
   className = "",
-  ...props
 }: CardProps) => {
   const cardClass = clsx(
     BASE_STYLES,

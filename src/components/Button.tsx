@@ -26,7 +26,6 @@ type ButtonProps = {
   variant?: "primary" | "secondary" | "outline" | "ghost" | "link";
   size?: "sm" | "md" | "lg";
   fullWidth?: boolean;
-  isPrimary?: boolean;
   isDisabled?: boolean;
   className?: string;
   onClick?: () => void;
@@ -37,7 +36,6 @@ const Button = ({
   variant = "primary",
   size = "md",
   fullWidth = false,
-  isPrimary = false,
   isDisabled = false,
   className = "",
   onClick,
