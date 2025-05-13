@@ -26,11 +26,22 @@ type Product = {
 
 const Home = async () => {
   // 무료 상품 API 문서: https://fakestoreapi.com/docs
-  const response1 = await fetch("https://fakestoreapi.com/products");
-  const products = await response1.json();
+  let products: [];
+  let product;
 
-  const response3 = await fetch("https://fakestoreapi.com/products/1");
-  const product = await response3.json();
+  try {
+    const response1 = await fetch("https://fakestoreapi.com/products");
+    products = await response1.json();
+  } catch (e) {
+    throw Error("상품 목록 조회 중 에러 발생");
+  }
+
+  try {
+    const response3 = await fetch("https://fakestoreapi.com/products/1");
+    product = await response3.json();
+  } catch (e) {
+    throw Error("상품 상세 조회 중 에러 발생");
+  }
 
   return (
     <div className="mb-20 space-y-8">
