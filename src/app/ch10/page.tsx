@@ -33,14 +33,14 @@ const Home = async () => {
     const response1 = await fetch("https://fakestoreapi.com/products");
     products = await response1.json();
   } catch {
-    throw Error("상품 목록 조회 중 에러 발생");
+    throw new Error("상품 목록 조회 중 에러 발생");
   }
 
   try {
     const response3 = await fetch("https://fakestoreapi.com/products/1");
     product = await response3.json();
   } catch {
-    throw Error("상품 상세 조회 중 에러 발생");
+    throw new Error("상품 상세 조회 중 에러 발생");
   }
 
   return (
