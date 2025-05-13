@@ -1,6 +1,6 @@
 # Workflow의 이름
 # Workflow : 하나의 yml 파일을 하나의 Workflow라고 부른다.
-name: Github Actions 연습하기
+name: Github Actions 실행시켜보기
 
 # Event : 실행되는 시점을 설정
 # main이라는 브랜치에 push 될 때 아래 Workflow를 실행
@@ -8,6 +8,23 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - "**"
+
+permissions:
+  # 저장소 내용을 읽을 수 있는 권한
+  contents: read
+  # 이슈를 생성하고 수정할 수 있는 권한
+  issues: write
+  # PR에 댓글을 달 수 있는 권한
+  pull-requests: write
+
+concurrency:
+  # 같은 워크플로우에 같은 브랜치면
+  group: ${{ github.workflow }}-${{ github.ref }}
+  # 이미 실행 중인 이전 워크플로우 취소
+  cancel-in-progress: true
 
 # 하나의 Workflow는 1개 이상의 Job으로 구성된다.
 # 여러 Job은 기본적으로 병렬적으로 수행된다.
@@ -20,21 +37,39 @@ jobs:
     # Step : 특정 작업을 수행하는 가장 작은 단위
     # Job은 여러 Step들로 구성되어 있다.
     steps:
-      - name: Hello World 찍기
-        run: echo "Hello World"
+      - name: Github Repository 파일 불러오기
+        uses: actions/checkout@v4
 
-      - name: 여러 명령어 문장 작성하기
-        run: |
-          echo "Good"
-          echo "Night"
+      - name: Node 설치
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: 의존성(라이브러리) 설치
+        run: npm ci
+
+      # - name: 테스트 실행하기
+      #   run: npm run test
+
+      - name: 빌드하기
+        run: npm run build
 
       # 참고: https://docs.github.com/en/actions/learn-github-actions/variables
-      - name: Github Actions 자체에 내장되어 있는 변수 사용해보기
-        run: |
-          echo $GITHUB_SHA
-          echo $GITHUB
+      # - name: Github Actions 자체에 내장되어 있는 변수 사용해보기
+      #   run: |
+      #     echo $GITHUB_SHA
+      #     echo $GITHUB
 
-      - name: Github Actions Secret 변수 사용해보기
-        run: |
-          echo ${{secrets.MY_NAME}}
-          echo ${{secrets.MY_HOBBY}}
+      # - name: Github Actions Secret 변수 사용해보기
+      #   run: |
+      #     echo ${{secrets.MY_NAME}}
+      #     echo ${{secrets.MY_HOBBY}}
+
+  deploy:
+    needs: my-job
+    if: github.ref == 'refs/head/main'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 배포하기
+        run: echo "배포 시작"
